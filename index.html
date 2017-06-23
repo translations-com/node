@@ -1,0 +1,902 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>GlobalLink Connect API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">NodeJS</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://www.translations.com/globallink/demo.html'>Free consultation</a></li>
+            <li><a href='http://www.translations.com/globallink/contact.html'>Contact Us!</a></li>
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="glexchange-main-class">GLExchange - Main Class</h1>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">GLExchange</span> <span class="p">{</span>
+    <span class="nx">getProject</span><span class="p">(</span><span class="nx">projectShortCode</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">initSubmission</span><span class="p">(</span><span class="nx">submissionObject</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">uploadTranslatable</span><span class="p">(</span><span class="nx">filePathLocal</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">startSubmission</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsByProject</span><span class="p">(</span><span class="nx">projectTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsBySubmission</span><span class="p">(</span><span class="nx">submissionTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsByDocuments</span><span class="p">(</span><span class="nx">documentTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">){}</span>
+    <span class="nx">downloadCompletedTarget</span><span class="p">(</span><span class="nx">targetTicket</span><span class="p">,</span> <span class="nx">downloadDir</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">sendDownloadConfirmation</span><span class="p">(</span><span class="nx">targetTicket</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+<p>This is the main API class. It will initialize a connection to Project Director. Different methods are available to perform the necessary operations: </p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">getCompletedTargetsByDocuments</code></td>
+<td>Array</td>
+<td>Get completed targets for a given source document ticket</td>
+</tr>
+<tr>
+<td><code class="prettyprint">getCompletedTargetsByProject</code></td>
+<td>Array</td>
+<td>Get all completed targets for a given project shortcode</td>
+</tr>
+<tr>
+<td><code class="prettyprint">getCompletedTargetsBySubmission</code></td>
+<td>Arrat</td>
+<td>Get all completed targets for a given submission ticket</td>
+</tr>
+<tr>
+<td><code class="prettyprint">getProject</code></td>
+<td>Array</td>
+<td>Get project configuration by it`s shortcode</td>
+</tr>
+<tr>
+<td><code class="prettyprint">startSubmission</code></td>
+<td>String</td>
+<td>Start Submission</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Parmeter</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">downloadCompletedTarget</code></td>
+<td><code class="prettyprint">maxResults</code></td>
+<td>Download all completed targets and returns <code class="prettyprint">targetTicket</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">sendDownloadConfirmation</code></td>
+<td><code class="prettyprint">targetTicket</code></td>
+<td>Sends confirmation that the target resources was downloaded successfully by the customer</td>
+</tr>
+<tr>
+<td><code class="prettyprint">initSubmission</code></td>
+<td><code class="prettyprint">submission</code></td>
+<td>Initialize a new Submission where <code class="prettyprint">submission</code> object contains the PD submission configuration</td>
+</tr>
+<tr>
+<td><code class="prettyprint">uploadTranslatable</code></td>
+<td><code class="prettyprint">document</code></td>
+<td>Uploads the document to project director for translation and returns <code class="prettyprint">documentTicket</code></td>
+</tr>
+</tbody></table>
+
+<h1 id="models-classes">Models Classes</h1>
+
+<h2 id="project">Project</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDProject</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shortcode</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">languageDirections</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fileFormats</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">workflows</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">customAttributes</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+    <span class="nx">initProjectData</span><span class="p">(</span><span class="nx">externalProject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shortcode</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>A project is a collection of configurations on the PD server, which includes language pairs, translation memory, workflow configuration, file-format parsers and user roles that govern the translation workflow.
+While integrating with content systems, you can have multiple projects setup on project director and have the business user choose which project they want to submit the content to.</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.shortcode</code></td>
+<td>String</td>
+<td>The project for which this submission will be created</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.name</code></td>
+<td>String</td>
+<td>The name of the submission that will show up in Project Director</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.ticket</code></td>
+<td>String</td>
+<td>The submission ticket</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.languageDirections</code></td>
+<td>Array</td>
+<td>Languages into which we will be translating the submission</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.workflow</code></td>
+<td>Array</td>
+<td>The workflow to be used</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.customAttributes</code></td>
+<td>Array</td>
+<td>The custom list of configured attributes for the project</td>
+</tr>
+</tbody></table>
+
+<h2 id="submission">Submission</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDSubmission</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">customAttributes</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dueDate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">instructions</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isUrgent</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguages</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// [{key1: value1}, {key2 : value2},...]</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">projectTicket</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">pmNotes</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">submitter</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">workflow</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>A submission is a collection of Documents submitted to project director for a specific project. Within a submission a user can request for translation of a Document into one or more languages.</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Parmeter</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.customAttributes</code></td>
+<td><code class="prettyprint">customAttributes</code></td>
+<td>[Optional] Custom attributes. Array of PDCustomAttribute. PDProject.customAttributes gets you the list of configured attributes for the project.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.dueDate</code></td>
+<td><code class="prettyprint">dueDate</code></td>
+<td>[Optional] Due date by when the submission should be completed in Project Director. This should always be greater than current date. If due date is not specified, Project Director will rely on the configured language model to calculate a due <code class="prettyprint">date. strtotime*1000</code></td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.instructions</code></td>
+<td><code class="prettyprint">instructions</code></td>
+<td>[Optional] Instructions for the translators</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.isUrgent</code></td>
+<td><code class="prettyprint">isUrgent</code></td>
+<td>[Optional] Submission priority. Boolean. Defaults to false(Normal)</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.sourceLanguage</code></td>
+<td><code class="prettyprint">sourceLanguage</code></td>
+<td>Source Language of the document in xx-XX format.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.targetLanguages</code></td>
+<td><code class="prettyprint">targetLanguages</code></td>
+<td>Target languages into which this document will be translated</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.metadata</code></td>
+<td><code class="prettyprint">metadata</code></td>
+<td>[Optional] Key-value array of metadata</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.name</code></td>
+<td><code class="prettyprint">name</code></td>
+<td>Name of the submission that will show up in Project Director</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.projectTicket</code></td>
+<td><code class="prettyprint">projectShortcode</code></td>
+<td>Set the PDProject for which this submission will be created</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.pmNotes</code></td>
+<td><code class="prettyprint">pmNotes</code></td>
+<td>[Optional] Notes for the project managers</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.submitter</code></td>
+<td><code class="prettyprint">submitter</code></td>
+<td>[Optional]  Set the submitter to a user other than the logged in user</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.ticket</code></td>
+<td><code class="prettyprint">submissionTicket</code></td>
+<td>Submission ticket</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.workflow</code></td>
+<td><code class="prettyprint">workflow</code></td>
+<td>[Optional]  Set the PDWorkflow to use</td>
+</tr>
+</tbody></table>
+
+<h2 id="document">Document</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDDocument</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguages</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">encoding</span> <span class="o">=</span> <span class="s2">"UTF-8"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fileformat</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">instructions</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">getDocumentInfo</span><span class="p">(</span><span class="nx">submission</span><span class="p">){}</span>
+    <span class="nx">getTargetInfos</span><span class="p">(</span><span class="nx">submission</span><span class="p">){}</span>
+    <span class="nx">getResourceInfos</span><span class="p">(){}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Document containing textual elements that require translation.</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">getDocumentInfo</code></td>
+<td>Object</td>
+<td>Internal method used by the UCF API</td>
+</tr>
+<tr>
+<td><code class="prettyprint">getTargetInfos</code></td>
+<td>Array</td>
+<td>Internal method used by the UCF API</td>
+</tr>
+<tr>
+<td><code class="prettyprint">getResourceInfo</code></td>
+<td>Object</td>
+<td>Internal method used by the UCF API</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Parmeter</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.data</code></td>
+<td><code class="prettyprint">data</code></td>
+<td>Document data for translation</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.clientIdentifier</code></td>
+<td><code class="prettyprint">UID</code> at client&rsquo;s System</td>
+<td>Specify a unique identifier for this document (if one exists) in the content management system</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.ncoding</code></td>
+<td><code class="prettyprint">encoding</code></td>
+<td>Set encoding for the document to be uploaded</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.fileformat</code></td>
+<td><code class="prettyprint">fileFormat</code></td>
+<td>If not set, defaults to configured <code class="prettyprint">fileFormat</code> on project director</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.instructions</code></td>
+<td><code class="prettyprint">instructions</code></td>
+<td>Additional metadata that you may want to attach to your document</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.sourceLanguage</code></td>
+<td><code class="prettyprint">sourceLanguage</code></td>
+<td>Set Source Language of the document that requires translation</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.targetLanguages</code></td>
+<td><code class="prettyprint">targetLanguages</code></td>
+<td>Set target languages into which this document will be translated</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.metadata</code></td>
+<td><code class="prettyprint">metadata</code></td>
+<td>Set metadata for the document being submitted for translation</td>
+</tr>
+</tbody></table>
+
+<h2 id="workflow">Workflow</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDWorkflow</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">externalWorkflow</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">externalWorkflow</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="nx">externalWorkflow</span><span class="p">.</span><span class="nx">ticket</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.name</code></td>
+<td>String</td>
+<td>returns the workflow name set up in PD</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.ticket</code></td>
+<td>String</td>
+<td>returns the workflow ticket for a given <code class="prettyprint">WorkflowName</code></td>
+</tr>
+</tbody></table>
+
+<h2 id="languagedirection">LanguageDirection</h2>
+
+<p>A language direction defines the source and target language direction for which users can submit translation requests.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDLanguageDirection</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">externalLanguageDirection</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguageName</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguage</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguageName</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.sourceLanguage</code></td>
+<td>String</td>
+<td>gets the source language ISO code [e.g. en-US] configured in PD</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.sourceLanguageName</code></td>
+<td>String</td>
+<td>gets the source language name [e.g. English (United States)] configured in PD</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.targetLanguage</code></td>
+<td>String</td>
+<td>gets the target language ISO code [e.g. de-DE] configured in PD</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.targetLanguageName</code></td>
+<td>String</td>
+<td>gets the source language name [e.g. German (Germany)] configured in PD</td>
+</tr>
+</tbody></table>
+
+<h2 id="target">Target</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDTarget</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentName</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentTicket</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLocale</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLocale</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// [{key1: value1}, {key2 : value2},...]</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wordCount</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">initializePDTarget</span><span class="p">(</span><span class="nx">externalTarget</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentName</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLocale</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLocale</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentTicket</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wordCount</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Target is the equivalent of the translated version of a Document. A Document can be submitted for translation into one or more languages. For each language, a target is generated on project director. E.g. If 2 documents were submitted for translation into 5 languages, upon completion of the translation workflow, you would have (2 x 5=) 10 targets available for delivery.</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.clientIdentifier</code></td>
+<td>String</td>
+<td><code class="prettyprint">UID</code> configured by client when the document was sent</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.documentName</code></td>
+<td>String</td>
+<td>Document Name of the document that was submitted for translation</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.documentTicket</code></td>
+<td>String</td>
+<td>Document Ticket of the source document that was submitted for translation</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.sourceLocale</code></td>
+<td>String</td>
+<td>Source locale (language ISO code) for this target</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.targetLocale</code></td>
+<td>String</td>
+<td>Locale (language ISO code) for this target</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.metadata</code></td>
+<td>Hash</td>
+<td>Metadata in the form of key-value pairs set on the document that was submitted for translation</td>
+</tr>
+<tr>
+<td><code class="prettyprint">thia.ticket</code></td>
+<td>String</td>
+<td>Target Ticket</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.wordCount</code></td>
+<td>String</td>
+<td>Amount of words for this target</td>
+</tr>
+</tbody></table>
+
+<h2 id="wordcount">WordCount</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">WordCount</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">golden</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">exact_100</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fuzzy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">repetitions</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nomatch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+    <span class="p">}</span>
+    <span class="nx">initializeWordCount</span><span class="p">(</span><span class="nx">golden</span><span class="p">,</span> <span class="nx">exact_100</span><span class="p">,</span> <span class="nx">repetitions</span><span class="p">,</span> <span class="nx">nomatch</span><span class="p">,</span> <span class="nx">total</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">golden</span> <span class="o">=</span> <span class="nx">golden</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">exact_100</span> <span class="o">=</span> <span class="nx">exact_100</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fuzzy</span> <span class="o">=</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">golden</span> <span class="o">-</span> <span class="nx">exact_100</span> <span class="o">-</span> <span class="nx">repetitions</span> <span class="o">-</span> <span class="nx">nomatch</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">repetitions</span> <span class="o">=</span> <span class="nx">repetitions</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nomatch</span> <span class="o">=</span> <span class="nx">nomatch</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+<p>Please note that words are counted and analyzed per segment against a Translation Memory, TM. A TM is a database that stores segments, which can be sentences, paragraphs or sentence-like units (headings, titles or elements in a list) that have previously been translated, in order to aid human translators. The translation memory stores the source text and its corresponding translation in language pairs called “translation units”. Individual words are handled by terminology bases and are not within the domain of TM.</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>golden</td>
+<td>int</td>
+<td>Total amount of words considered to be 100% matches in context against the TM (either because of previous and next segment match or due to attribute)</td>
+</tr>
+<tr>
+<td>exact_100</td>
+<td>int</td>
+<td>Total amoutn of words considered to be 100% matches against the TM</td>
+</tr>
+<tr>
+<td>fuzzy</td>
+<td>int</td>
+<td>Total amoutn of words considered to be partially matching (99%-75%) against the TM</td>
+</tr>
+<tr>
+<td>repetitions</td>
+<td>int</td>
+<td>Total amount of words that match in the same document</td>
+</tr>
+<tr>
+<td>nomatch</td>
+<td>int</td>
+<td>Total amount of words that do not match (75%-0%) against the TM</td>
+</tr>
+<tr>
+<td>total</td>
+<td>int</td>
+<td>Total amount of words counted on the document (<code class="prettyprint">total</code> = <code class="prettyprint">golden</code> + <code class="prettyprint">exact_100</code> + <code class="prettyprint">fuzzy</code> + <code class="prettyprint">repetitions</code> + <code class="prettyprint">nomatch</code>)</td>
+</tr>
+</tbody></table>
+
+<h2 id="customattribute">CustomAttribute</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDCustomAttribute</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">customAttribute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">customAttribute</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">mandatory</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">mandatory</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">values</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">values</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+<p>Each project can be configured to allow users to specify custom attributes for their submissions. The custom attributes can be either plain text, or an enum. Custom attributes can be used for reporting, billing etc. eg. You could specify a Cost Center as a custom attribute and instruct your account manager to invoice by cost-center</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">mandatory</code></td>
+<td>Boolean</td>
+<td>Defines if the attribute is mandatory or not</td>
+</tr>
+<tr>
+<td><code class="prettyprint">name</code></td>
+<td>string</td>
+<td>Prints the attribute name</td>
+</tr>
+<tr>
+<td><code class="prettyprint">type</code></td>
+<td>string</td>
+<td>Prints the attribute type</td>
+</tr>
+<tr>
+<td><code class="prettyprint">values</code></td>
+<td>Array</td>
+<td>Prints the attribute value(s)</td>
+</tr>
+</tbody></table>
+
+<h1 id="configuration-classes">Configuration Classes</h1>
+
+<h2 id="pdconfig">PDConfig</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDConfig</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">configObj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">username</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyConfig</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">proxyConfig</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<p>Project director configuration</p>
+
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Parmeter</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.url</code></td>
+<td><code class="prettyprint">url</code></td>
+<td>Set the URL of the project director server to connect to</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.username</code></td>
+<td><code class="prettyprint">username</code></td>
+<td>Sets Project Director username</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.password</code></td>
+<td><code class="prettyprint">password</code></td>
+<td>Sets Project Director password</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.proxyConfig</code></td>
+<td><code class="prettyprint">ProxyConfig</code></td>
+<td>Set proxy configuration for outbound traffic</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.userAgen</code></td>
+<td><code class="prettyprint">userAgent</code></td>
+<td>Sets the user Agent for this client. A user agent is any user friendly identifier which is used to categorize the logging on GlobalLink</td>
+</tr>
+</tbody></table>
+
+<h2 id="proxy-config">Proxy Config</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">ProxyConfig</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyHost</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyPort</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyUser</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyPassword</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Parmeter</th>
+<th>Sumary</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">this.proxyHost</code></td>
+<td><code class="prettyprint">proxyHost</code></td>
+<td>Set Proxy server IP address or hostname</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.proxyPort</code></td>
+<td><code class="prettyprint">proxyPort</code></td>
+<td>Set Proxy server port</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.proxyUser = &#39;&#39;;</code></td>
+<td><code class="prettyprint">proxyUser</code></td>
+<td>Set Proxy user</td>
+</tr>
+<tr>
+<td><code class="prettyprint">this.proxyPassword = &#39;&#39;;</code></td>
+<td><code class="prettyprint">proxyPassword</code></td>
+<td>Proxy server user password</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">NodeJS</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
