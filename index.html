@@ -228,7 +228,18 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id="glexchange-main-class">GLExchange - Main Class</h1>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">GLExchange</span> <span class="p">{</span>
+    <span class="nx">getProject</span><span class="p">(</span><span class="nx">projectShortCode</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">initSubmission</span><span class="p">(</span><span class="nx">submissionObject</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">uploadTranslatable</span><span class="p">(</span><span class="nx">filePathLocal</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">startSubmission</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsByProject</span><span class="p">(</span><span class="nx">projectTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsBySubmission</span><span class="p">(</span><span class="nx">submissionTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">getCompletedTargetsByDocuments</span><span class="p">(</span><span class="nx">documentTicket</span><span class="p">,</span> <span class="nx">maxResults</span><span class="p">){}</span>
+    <span class="nx">downloadCompletedTarget</span><span class="p">(</span><span class="nx">targetTicket</span><span class="p">,</span> <span class="nx">downloadDir</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="nx">sendDownloadConfirmation</span><span class="p">(</span><span class="nx">targetTicket</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
 <p>This is the main API class. It will initialize a connection to Project Director. Different methods are available to perform the necessary operations: </p>
 
 <table><thead>
@@ -297,7 +308,23 @@
 <h1 id="models-classes">Models Classes</h1>
 
 <h2 id="project">Project</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDProject</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shortcode</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">languageDirections</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fileFormats</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">workflows</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">customAttributes</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+    <span class="nx">initProjectData</span><span class="p">(</span><span class="nx">externalProject</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">shortcode</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <p>A project is a collection of configurations on the PD server, which includes language pairs, translation memory, workflow configuration, file-format parsers and user roles that govern the translation workflow.
 While integrating with content systems, you can have multiple projects setup on project director and have the business user choose which project they want to submit the content to.</p>
 
@@ -341,7 +368,24 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="submission">Submission</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDSubmission</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">customAttributes</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dueDate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">instructions</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">isUrgent</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguages</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> <span class="c1">// [{key1: value1}, {key2 : value2},...]</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">projectTicket</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">pmNotes</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">submitter</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">workflow</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <p>A submission is a collection of Documents submitted to project director for a specific project. Within a submission a user can request for translation of a Document into one or more languages.</p>
 
 <table><thead>
@@ -419,7 +463,23 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="document">Document</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDDocument</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguages</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">encoding</span> <span class="o">=</span> <span class="s2">"UTF-8"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fileformat</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">instructions</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">getDocumentInfo</span><span class="p">(</span><span class="nx">submission</span><span class="p">){}</span>
+    <span class="nx">getTargetInfos</span><span class="p">(</span><span class="nx">submission</span><span class="p">){}</span>
+    <span class="nx">getResourceInfos</span><span class="p">(){}</span>
+<span class="p">}</span>
+</code></pre>
 <p>Document containing textual elements that require translation.</p>
 
 <table><thead>
@@ -496,7 +556,13 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="workflow">Workflow</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDWorkflow</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">externalWorkflow</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">externalWorkflow</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="nx">externalWorkflow</span><span class="p">.</span><span class="nx">ticket</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -519,7 +585,15 @@ While integrating with content systems, you can have multiple projects setup on 
 <h2 id="languagedirection">LanguageDirection</h2>
 
 <p>A language direction defines the source and target language direction for which users can submit translation requests.</p>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDLanguageDirection</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">externalLanguageDirection</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguage</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLanguageName</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguage</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLanguageName</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -550,7 +624,28 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="target">Target</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDTarget</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentName</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentTicket</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLocale</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLocale</span> <span class="o">=</span> <span class="s1">''</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// [{key1: value1}, {key2 : value2},...]</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wordCount</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">initializePDTarget</span><span class="p">(</span><span class="nx">externalTarget</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentName</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sourceLocale</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">targetLocale</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">ticket</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">documentTicket</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">wordCount</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">clientIdentifier</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <p>Target is the equivalent of the translated version of a Document. A Document can be submitted for translation into one or more languages. For each language, a target is generated on project director. E.g. If 2 documents were submitted for translation into 5 languages, upon completion of the translation workflow, you would have (2 x 5=) 10 targets available for delivery.</p>
 
 <table><thead>
@@ -603,7 +698,26 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="wordcount">WordCount</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">WordCount</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">golden</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">exact_100</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fuzzy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">repetitions</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nomatch</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// int</span>
+    <span class="p">}</span>
+    <span class="nx">initializeWordCount</span><span class="p">(</span><span class="nx">golden</span><span class="p">,</span> <span class="nx">exact_100</span><span class="p">,</span> <span class="nx">repetitions</span><span class="p">,</span> <span class="nx">nomatch</span><span class="p">,</span> <span class="nx">total</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">golden</span> <span class="o">=</span> <span class="nx">golden</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">exact_100</span> <span class="o">=</span> <span class="nx">exact_100</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fuzzy</span> <span class="o">=</span> <span class="nx">total</span> <span class="o">-</span> <span class="nx">golden</span> <span class="o">-</span> <span class="nx">exact_100</span> <span class="o">-</span> <span class="nx">repetitions</span> <span class="o">-</span> <span class="nx">nomatch</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">repetitions</span> <span class="o">=</span> <span class="nx">repetitions</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nomatch</span> <span class="o">=</span> <span class="nx">nomatch</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
+</code></pre>
 <p>Please note that words are counted and analyzed per segment against a Translation Memory, TM. A TM is a database that stores segments, which can be sentences, paragraphs or sentence-like units (headings, titles or elements in a list) that have previously been translated, in order to aid human translators. The translation memory stores the source text and its corresponding translation in language pairs called “translation units”. Individual words are handled by terminology bases and are not within the domain of TM.</p>
 
 <table><thead>
@@ -646,7 +760,18 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="customattribute">CustomAttribute</h2>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDCustomAttribute</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">customAttribute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">customAttribute</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">mandatory</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">mandatory</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">values</span> <span class="o">=</span> <span class="nx">customAttribute</span><span class="p">.</span><span class="nx">values</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
+</code></pre>
 <p>Each project can be configured to allow users to specify custom attributes for their submissions. The custom attributes can be either plain text, or an enum. Custom attributes can be used for reporting, billing etc. eg. You could specify a Cost Center as a custom attribute and instruct your account manager to invoice by cost-center</p>
 
 <table><thead>
@@ -681,7 +806,16 @@ While integrating with content systems, you can have multiple projects setup on 
 <h1 id="configuration-classes">Configuration Classes</h1>
 
 <h2 id="pdconfig">PDConfig</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">PDConfig</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">configObj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">url</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">username</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">username</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">password</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyConfig</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">proxyConfig</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">configObj</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <p>Project director configuration</p>
 
 <table><thead>
@@ -719,7 +853,15 @@ While integrating with content systems, you can have multiple projects setup on 
 </tbody></table>
 
 <h2 id="proxy-config">Proxy Config</h2>
-
+<pre class="highlight javascript tab-javascript"><code><span class="kr">class</span> <span class="nx">ProxyConfig</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyHost</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyPort</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyUser</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">proxyPassword</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 <table><thead>
 <tr>
 <th>Method</th>
