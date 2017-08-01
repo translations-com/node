@@ -19,7 +19,19 @@ search: true
 
 # GLExchange - Main Class
 
-
+```javascript
+class GLExchange {
+	getProject(projectShortCode) {}
+	initSubmission(submissionObject) {}
+	uploadTranslatable(filePathLocal) {}
+	startSubmission() {}
+	getCompletedTargetsByProject(projectTicket, maxResults) {}
+	getCompletedTargetsBySubmission(submissionTicket, maxResults) {}
+	getCompletedTargetsByDocuments(documentTicket, maxResults){}
+	downloadCompletedTarget(targetTicket, downloadDir) {}
+	sendDownloadConfirmation(targetTicket) {}
+}
+```
 
 This is the main API class. It will initialize a connection to Project Director. Different methods are available to perform the necessary operations: 
 
@@ -42,7 +54,24 @@ Method | Parmeter | Sumary
 
 ## Project
 
-
+```javascript
+class PDProject {
+	constructor() {
+		this.shortcode = '';
+		this.name = '';
+		this.ticket = '';
+		this.languageDirections = [];
+		this.fileFormats = [];
+		this.workflows = [];
+		this.customAttributes = [];
+	}
+	initProjectData(externalProject) {
+		this.name
+		this.shortcode
+		this.ticket
+	}
+}
+```
 
 A project is a collection of configurations on the PD server, which includes language pairs, translation memory, workflow configuration, file-format parsers and user roles that govern the translation workflow.
 While integrating with content systems, you can have multiple projects setup on project director and have the business user choose which project they want to submit the content to.
@@ -58,7 +87,25 @@ Method | Returns | Sumary
 
 ## Submission
 
-
+```javascript
+class PDSubmission {
+	constructor() {
+		this.customAttributes = null;
+		this.dueDate = 0;
+		this.instructions = '';
+		this.isUrgent = false;
+		this.sourceLanguage = '';
+		this.targetLanguages = [];
+		this.metadata = null; // [{key1: value1}, {key2 : value2},...]
+		this.name = '';
+		this.projectTicket = null;
+		this.pmNotes = '';
+		this.submitter = null;
+		this.ticket = null;
+		this.workflow = null;
+	}
+}
+```
 
 A submission is a collection of Documents submitted to project director for a specific project. Within a submission a user can request for translation of a Document into one or more languages.
 
@@ -81,7 +128,24 @@ Method | Parmeter | Sumary
 
 ## Document
 
-
+```javascript
+class PDDocument {
+	constructor() {
+		this.data = '';
+		this.name = '';
+		this.sourceLanguage = '';
+		this.targetLanguages = [];
+		this.clientIdentifier = null;
+		this.encoding = "UTF-8";
+		this.fileformat = '';
+		this.instructions = '';
+		this.metadata = null;
+	}
+	getDocumentInfo(submission){}
+	getTargetInfos(submission){}
+	getResourceInfos(){}
+}
+```
 
 Document containing textual elements that require translation.
 
@@ -104,7 +168,14 @@ Method | Parmeter | Sumary
 
 ## Workflow
 
-
+```javascript
+class PDWorkflow {
+	constructor(externalWorkflow) {
+		this.name = externalWorkflow.name;
+		this.ticket = externalWorkflow.ticket;
+	}
+}
+```
 
 Method | Returns | Sumary 
 ------ | ------- | -------
@@ -115,7 +186,16 @@ Method | Returns | Sumary
 
 A language direction defines the source and target language direction for which users can submit translation requests.
 
-
+```javascript
+class PDLanguageDirection {
+	constructor(externalLanguageDirection){
+		this.sourceLanguage
+		this.sourceLanguageName
+		this.targetLanguage
+		this.targetLanguageName
+	}
+}
+```
 
 Method | Returns | Sumary 
 ------ | ------- | -------
@@ -127,7 +207,29 @@ Method | Returns | Sumary
 
 ## Target
 
-
+```javascript
+class PDTarget {
+	constructor() {
+		this.clientIdentifier;
+		this.documentName = ''
+		this.documentTicket = ''
+		this.sourceLocale = ''
+		this.targetLocale = ''
+		this.metadata = []; // [{key1: value1}, {key2 : value2},...]
+		this.ticket = '';
+		this.wordCount = undefined;
+	}
+	initializePDTarget(externalTarget) {
+		this.documentName
+		this.sourceLocale
+		this.targetLocale
+		this.ticket
+		this.documentTicket
+		this.wordCount
+		this.clientIdentifier
+	}
+}
+```
 
 Target is the equivalent of the translated version of a Document. A Document can be submitted for translation into one or more languages. For each language, a target is generated on project director. E.g. If 2 documents were submitted for translation into 5 languages, upon completion of the translation workflow, you would have (2 x 5=) 10 targets available for delivery.
 
@@ -146,7 +248,27 @@ Method | Returns | Sumary
 
 ## WordCount
 
+```javascript
+class WordCount {
+	constructor() {
+		this.golden = 0; // int
+		this.exact_100 = 0; // int
+		this.fuzzy = 0; // int
+		this.repetitions = 0; // int
+		this.nomatch = 0; // int
+		this.total = 0; // int
+	}
+	initializeWordCount(golden, exact_100, repetitions, nomatch, total) {
+		this.golden = golden;
+		this.exact_100 = exact_100;
+		this.fuzzy = total - golden - exact_100 - repetitions - nomatch;
+		this.repetitions = repetitions;
+		this.nomatch = nomatch;
+		this.total = total;
+	}
+}
 
+```
 
 Please note that words are counted and analyzed per segment against a Translation Memory, TM. A TM is a database that stores segments, which can be sentences, paragraphs or sentence-like units (headings, titles or elements in a list) that have previously been translated, in order to aid human translators. The translation memory stores the source text and its corresponding translation in language pairs called “translation units”. Individual words are handled by terminology bases and are not within the domain of TM.
 
@@ -161,7 +283,19 @@ total | int | Total amount of words counted on the document (`total` = `golden` 
 
 ## CustomAttribute
 
-
+```javascript
+class PDCustomAttribute {
+	constructor(customAttribute) {
+		if (customAttribute) {
+			this.mandatory = customAttribute.mandatory;
+			this.name = customAttribute.name;
+			this.type = customAttribute.type;
+			this.values = customAttribute.values;
+		}
+	}
+}
+	
+```
 
 Each project can be configured to allow users to specify custom attributes for their submissions. The custom attributes can be either plain text, or an enum. Custom attributes can be used for reporting, billing etc. eg. You could specify a Cost Center as a custom attribute and instruct your account manager to invoice by cost-center
 
@@ -176,7 +310,17 @@ Method | Returns | Sumary
 
 ## PDConfig
 
-
+```javascript
+class PDConfig {
+	constructor(configObj) {
+		this.url = configObj.url;
+		this.username = configObj.username;
+		this.password = configObj.password;
+		this.proxyConfig = configObj.proxyConfig;
+		this.userAgent = configObj.userAgent;
+	}
+}
+```
 
 Project director configuration
 
@@ -191,7 +335,16 @@ Method | Parmeter | Sumary
 
 ## Proxy Config
 
-
+```javascript
+class ProxyConfig {
+	constructor() {
+		this.proxyHost = '';
+		this.proxyPort = '';
+		this.proxyUser = '';
+		this.proxyPassword = '';
+	}
+}
+```
 
 
 Method | Parmeter | Sumary 
